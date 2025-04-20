@@ -1,0 +1,51 @@
+# Node modules
+node_modules/
+
+# Next.js build output
+.next/
+
+# Production build files
+out/
+
+# Dependency directories
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Log files
+logs
+*.log
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Test coverage reports
+coverage/
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+
+# Firebase/Google credentials and keys (if using)
+*.json
+
+# Directory for storing uploaded images or files
+/public/uploads/
+
+# Next.js export directory
+/.next/
+
+# Optional: you can add other sensitive files or directories
