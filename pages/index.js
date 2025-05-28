@@ -1,30 +1,34 @@
-import { useRouter } from 'next/router';
+import styles from '../styles/Home.module.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import CategoryCard from '../components/CategoryCard';
 
-const handleLogin = async () => {
-  try {
-    const res = await fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
+const categories = [
+  { title: 'Stationary', img: 'stationary.jpg' },
+  { title: 'Clothes', img: 'clothes.jpg' },
+  { title: 'Food', img: 'food.jpg' },
+  { title: 'Footwears', img: 'footwears.jpg' },
+  { title: 'Toys', img: 'toys.jpg' },
+  { title: 'Blankets', img: 'blankets.jpg' },
+];
 
-    const data = await res.json();
+export default function HomePage() {
+  return (
+    <div className={styles.container}>
+      <header>
+        <Navbar />
+      </header>
 
-    if (res.ok) {
-      // ✅ Store the JWT token securely (consider using httpOnly cookies instead of localStorage)
-      localStorage.setItem('token', data.token);  // This is not recommended for security reasons
+      <main className={styles.main}>
+        <h1 className={styles.heading}>Categories</h1>
+        <div className={styles.grid}>
+          {categories.map((category, index) => (
+            <CategoryCard key={index} title={category.title} img={category.img} />
+          ))}
+        </div>
+      </main>
 
-      // ✅ Redirect to home/dashboard
-      router.push('/home'); // or wherever you want
-    } else {
-      // Handle specific errors based on the message from the server
-      alert(data.message || 'Login failed');
-    }
-  } catch (error) {
-    // Handle network or unexpected errors
-    console.error('Login error:', error);
-    alert('An error occurred while trying to log in. Please try again later.');
-  }
-};
+      <Footer />
+    </div>
+  );
+}

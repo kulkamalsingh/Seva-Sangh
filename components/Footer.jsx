@@ -13,7 +13,7 @@ export default function Footer() {
         </p>
         {/* Social Media Links */}
         <div className={styles.socialLinks}>
-          <Link href="https://facebook.com" legacyBehavior>
+          {/* <Link href="https://facebook.com" legacyBehavior>
             <a target="_blank">Facebook</a>
           </Link>
           <Link href="https://twitter.com" legacyBehavior>
@@ -21,7 +21,7 @@ export default function Footer() {
           </Link>
           <Link href="https://www.instagram.com/kulkamalsingh/" legacyBehavior>
             <a target="_blank">Instagram</a>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </footer>
